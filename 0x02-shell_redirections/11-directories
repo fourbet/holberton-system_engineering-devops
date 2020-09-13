@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ldRa | wc -l
+find . -mindepth 1 -maxdepth 2 -type d | wc -l
