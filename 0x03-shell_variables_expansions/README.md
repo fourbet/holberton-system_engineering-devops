@@ -1,0 +1,1 @@
+This is a project about the variables and expansions in Shell
