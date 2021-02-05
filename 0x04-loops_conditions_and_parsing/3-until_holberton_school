@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Displays "Holberton School" 10 times
+name="Holberton School"
+counter=1
+
+until [ $counter -gt 10 ]
+do
+    echo "$name"
+    ((counter++))
+done
