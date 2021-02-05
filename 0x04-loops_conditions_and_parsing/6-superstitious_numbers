@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Displays number from 1 to 20 
+
+for i in {1..20}
+do
+    echo $i
+    if [ $i -eq 4 ]
+    then
+	echo "bad luck from China"
+    elif [ $i -eq 9 ]
+    then
+	echo "bad luck from Japan"
+    elif [ $i -eq 17 ]
+    then
+	echo "bad luck from Italy"
+    fi
+    
+done
