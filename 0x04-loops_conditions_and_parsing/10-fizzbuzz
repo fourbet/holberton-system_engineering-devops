@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Displays numbers from 1 to 100
+nbr=1
+
+while [ $nbr -le 100 ]
+do
+    if (($nbr % 3 == 0)) && (($nbr % 5 == 0))
+    then
+	echo FizzBuzz
+    elif (($nbr % 5 == 0))
+    then
+	echo Buzz
+    elif (($nbr % 3 == 0))
+    then
+	echo Fizz
+    else
+	echo $nbr
+    fi
+    ((nbr++))
+done
