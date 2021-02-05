@@ -4,13 +4,13 @@ nbr=1
 
 while [ $nbr -le 100 ]
 do
-    if (($nbr % 3 == 0)) && (($nbr % 5 == 0))
+    if ((nbr % 3 == 0)) && ((nbr % 5 == 0))
     then
 	echo FizzBuzz
-    elif (($nbr % 5 == 0))
+    elif ((nbr % 5 == 0))
     then
 	echo Buzz
-    elif (($nbr % 3 == 0))
+    elif ((nbr % 3 == 0))
     then
 	echo Fizz
     else
