@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# custom 404 page
+apt-get update -y
+apt-get install -y nginx
+echo 'Holberton School' | tee /var/www/html/index.nginx-debian.html
+touch /var/www/html/404.html
+echo "Ceci n'est pas une page" | tee /var/www/html/404.html
+sed -i 's/listen 80 default_server;/listen 80 default_server;\n    error_page 404 \/404.html;\n    rewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;/' /etc/nginx/sites-available/default
+service nginx restart
