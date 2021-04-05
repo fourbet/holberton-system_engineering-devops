@@ -3,3 +3,4 @@
 apt-get update -y
 apt-get install -y nginx
 echo 'Holberton School' > /var/www/html/index.nginx-debian.html
+service nginx restart
