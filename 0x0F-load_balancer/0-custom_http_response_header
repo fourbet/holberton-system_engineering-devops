@@ -10,7 +10,7 @@ sed -i 's/listen 80 default_server;/listen 80 default_server;\nrewrite ^\/redire
 
 sudo touch /var/www/html/404.html
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-sed -i 's/listen 80 default_server;/listen 80 default_server;\n    error_page 404 \/404.html;\n    rewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;\n add_header X-Served-By $(hostname);/' /etc/nginx/sites-available/default
+sed -i "s/listen 80 default_server;/listen 80 default_server;\n    error_page 404 \/404.html;\n    rewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;\n    add_header X-Served-By $(hostname);/" /etc/nginx/sites-available/default
 
 
 service nginx restart
