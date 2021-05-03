@@ -16,14 +16,17 @@ if __name__ == "__main__":
                             .format(id))
         todos = todo.json()
 
+        dict = {}
         filename = 'todo_all_employees' + '.json'
         with open(filename, mode='a') as f:
-            data = {}
-            data[id] = []
+            data = []
             for task in todos:
-                data[id].append({
+                data.append({
                     'task': task.get('title'),
                     'completed': task.get('completed'),
                     'username': username
                 })
-            json.dump(data, f)
+            dict[id] = data
+
+    with open(filename, mode='a') as f:
+        json.dump(dict, f)
