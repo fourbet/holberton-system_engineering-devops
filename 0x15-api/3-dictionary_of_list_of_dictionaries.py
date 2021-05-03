@@ -7,7 +7,7 @@ import json
 if __name__ == "__main__":
 
     dict = {}
-    for id in range(1, 10):
+    for id in range(1, 11):
         user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                             .format(id))
         employee = user.json()
