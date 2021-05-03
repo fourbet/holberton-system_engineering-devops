@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ API project """
+import csv
 import requests
 import sys
-import csv
+
 
 if __name__ == "__main__":
     id = sys.argv[1]
