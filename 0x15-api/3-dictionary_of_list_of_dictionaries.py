@@ -6,6 +6,7 @@ import json
 
 if __name__ == "__main__":
 
+    dict = {}
     for id in range(1, 10):
         user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                             .format(id))
@@ -16,17 +17,15 @@ if __name__ == "__main__":
                             .format(id))
         todos = todo.json()
 
-        dict = {}
         filename = 'todo_all_employees' + '.json'
-        with open(filename, mode='a') as f:
-            data = []
-            for task in todos:
-                data.append({
-                    'task': task.get('title'),
-                    'completed': task.get('completed'),
-                    'username': username
-                })
-            dict[id] = data
+        data = []
+        for task in todos:
+            data.append({
+                'task': task.get('title'),
+                'completed': task.get('completed'),
+                'username': username
+            })
+        dict[id] = data
 
-    with open(filename, mode='a') as f:
+    with open(filename, mode='w') as f:
         json.dump(dict, f)
