@@ -18,13 +18,12 @@ if __name__ == "__main__":
     taskTotal = 0
     for task in todos:
         taskTotal += 1
-        if task.get('completed') == True:
+        if task.get('completed') is True:
             taskDone += 1
 
     print("Employee {} is done with tasks({}/{}):"
           .format(name, taskDone, taskTotal))
 
     for task in todos:
-        if task.get('completed') == True:
+        if task.get('completed') is True:
             print("\t " + task.get('title'))
-
