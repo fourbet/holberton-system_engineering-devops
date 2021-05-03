@@ -13,8 +13,9 @@ if __name__ == "__main__":
         employee = user.json()
         username = employee.get('username')
 
-        todo = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos"
-                            .format(id))
+        todo = requests.get(
+            "https://jsonplaceholder.typicode.com/users/{}/todos"
+            .format(id))
         todos = todo.json()
 
         filename = 'todo_all_employees' + '.json'
