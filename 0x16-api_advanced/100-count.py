@@ -18,7 +18,7 @@ def count_words(subreddit, word_list, after=None, count=0, sum_word={}):
     for post in res.json().get('data').get('children'):
         title = post.get('data').get('title')
         for word in word_list:
-            if word in title:
+            if word.lower() in title.lower():
                 sum_word[word.lower()] += 1
     after = res.json().get('data').get('after')
     count = res.json().get('data').get('count')
