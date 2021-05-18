@@ -4,8 +4,7 @@ import requests
 
 
 def top_ten(subreddit):
-    """queries the Reddit API and
-    prints the titles of the first 10 hot posts"""
+    """queries the Reddit API, prints the titles of the first 10 hot posts"""
     res = requests.get('https://www.reddit.com/r/{}/top.json?limit=10'
                        .format(subreddit),
                        headers={"User-Agent": "My-User-Agent"},
