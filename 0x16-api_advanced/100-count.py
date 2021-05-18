@@ -4,7 +4,7 @@ import requests
 
 
 def count_words(subreddit, word_list, after=None, count=0, sum_word={}):
-    """parses the title of all hot articles, and prints a sorted count of given keywords"""
+    """prints a sorted count of given keywords"""
     if sum_word == {}:
         for word in word_list:
             sum_word[word.lower()] = 0
